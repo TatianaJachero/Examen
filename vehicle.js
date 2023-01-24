@@ -4,9 +4,13 @@ function Vehicle(x, y) {
     this.target = createVector(x, y);
     this.vel = p5.Vector.random2D();
     this.acc = createVector();
-    this.r = 15;
+    this.r = 30;
     this.maxspeed = 5;
     this.maxforce = 1;
+    this.red = random(10, 250);
+    this.green = random(100, 255);
+    this.blue = random(10, 150);
+    this.diametro = random(-8, 5);
 }
 
 Vehicle.prototype.behaviors = function () {
@@ -32,9 +36,11 @@ Vehicle.prototype.update = function () {
 }
 
 Vehicle.prototype.show = function () {
-    stroke(25);
-    strokeWeight(5, 5);
-    point(this.pos.x, this.pos.y);
+    stroke('rgba]0,100,150,0.01)');
+
+    fill(this.red, this.green, this.blue);
+    ellipse(this.pos.x, this.pos.y, this.diametro, this.diametro);
+
 }
 
 Vehicle.prototype.arrive = function (target) {
