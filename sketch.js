@@ -1,10 +1,11 @@
 let font;
+let vehicles = [];
 
-function setup() {
+function preload() {
   font = loadFont('Fresh Lychee.otf')
 }
 
-function draw() {
+function setup() {
   createCanvas(1980, 720);
   background(100, 200, 100);
   //textFont(font);
@@ -17,9 +18,21 @@ function draw() {
 
   for (let i = 0; i < points.length; i++) {
     let pt = points[i];
-    stroke(255);
-    strokeWeight(8);
-    point(pt.x, pt.y);
+    let vehicle = new Vehicle(pt.x, pt.y);
+    vehicles.push(vehicle);
+    // stroke(255);
+    // strokeWeight(5, 5);
+    // point(pt.x, pt.y);
 
   }
+}
+
+function draw() {
+  background(100, 200, 100);
+  for (var i = 0; i < vehicles.length; i++) {
+    var v = vehicles[i];
+    v.update();
+    v.show();
+  }
+
 }
