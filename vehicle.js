@@ -7,10 +7,10 @@ function Vehicle(x, y) {
     this.r = 30;
     this.maxspeed = 5;
     this.maxforce = 1;
-    this.red = random(10, 250);
+    this.red = random(100, 250);
     this.green = random(100, 255);
-    this.blue = random(10, 150);
-    this.diametro = random(-8, 5);
+    this.blue = random(100, 150);
+    this.diametro = random(-3, 8);
 }
 
 Vehicle.prototype.behaviors = function () {
