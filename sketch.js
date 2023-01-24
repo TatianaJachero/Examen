@@ -29,8 +29,9 @@ function setup() {
 
 function draw() {
   background(100, 200, 100);
-  for (var i = 0; i < vehicles.length; i++) {
-    var v = vehicles[i];
+  for (let i = 0; i < vehicles.length; i++) {
+    let v = vehicles[i];
+    v.behaviors();
     v.update();
     v.show();
   }
